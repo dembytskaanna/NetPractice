@@ -4484,19 +4484,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\s1dst\\.nuget\\packages\\": {}
+    "C:\\Users\\Антонина\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\s1dst\\source\\repos\\Cinema\\Cinema.csproj",
+      "projectUniqueName": "C:\\Users\\Антонина\\Source\\Repos\\NetPractice\\Cinema.csproj",
       "projectName": "Cinema",
-      "projectPath": "C:\\Users\\s1dst\\source\\repos\\Cinema\\Cinema.csproj",
-      "packagesPath": "C:\\Users\\s1dst\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\s1dst\\source\\repos\\Cinema\\obj\\",
+      "projectPath": "C:\\Users\\Антонина\\Source\\Repos\\NetPractice\\Cinema.csproj",
+      "packagesPath": "C:\\Users\\Антонина\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Антонина\\Source\\Repos\\NetPractice\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\s1dst\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Антонина\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
