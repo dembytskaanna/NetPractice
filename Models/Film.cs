@@ -10,5 +10,6 @@
         public float? Rating { get; set; }
         public string? Trailer { get; set; }
         public string? Cast { get; set; }
+        public ICollection<Screening> Screenings { get; set; }
     }
 }
