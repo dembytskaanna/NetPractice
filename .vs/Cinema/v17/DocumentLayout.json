@@ -3,36 +3,44 @@
   "WorkspaceRootPath": "C:\\NetPractice\\NetPractice\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{CF7CC119-BABD-40BB-AB8B-6BBEC65094AD}|Cinema.csproj|c:\\netpractice\\netpractice\\data\\datacontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CF7CC119-BABD-40BB-AB8B-6BBEC65094AD}|Cinema.csproj|solutionrelative:data\\datacontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{CF7CC119-BABD-40BB-AB8B-6BBEC65094AD}|Cinema.csproj|c:\\netpractice\\netpractice\\models\\screening.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{CF7CC119-BABD-40BB-AB8B-6BBEC65094AD}|Cinema.csproj|solutionrelative:models\\screening.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CF7CC119-BABD-40BB-AB8B-6BBEC65094AD}|Cinema.csproj|c:\\netpractice\\netpractice\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CF7CC119-BABD-40BB-AB8B-6BBEC65094AD}|Cinema.csproj|solutionrelative:models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{CF7CC119-BABD-40BB-AB8B-6BBEC65094AD}|Cinema.csproj|c:\\netpractice\\netpractice\\seed.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{CF7CC119-BABD-40BB-AB8B-6BBEC65094AD}|Cinema.csproj|solutionrelative:seed.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{CF7CC119-BABD-40BB-AB8B-6BBEC65094AD}|Cinema.csproj|c:\\netpractice\\netpractice\\data\\datacontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CF7CC119-BABD-40BB-AB8B-6BBEC65094AD}|Cinema.csproj|solutionrelative:data\\datacontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\NetPractice\\NetPractice\\Migrations\\20240502155343_InitialCreate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Migrations\\20240502155343_InitialCreate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{CF7CC119-BABD-40BB-AB8B-6BBEC65094AD}|Cinema.csproj|c:\\netpractice\\netpractice\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{CF7CC119-BABD-40BB-AB8B-6BBEC65094AD}|Cinema.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{CF7CC119-BABD-40BB-AB8B-6BBEC65094AD}|Cinema.csproj|c:\\netpractice\\netpractice\\models\\hall.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CF7CC119-BABD-40BB-AB8B-6BBEC65094AD}|Cinema.csproj|solutionrelative:models\\hall.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{CF7CC119-BABD-40BB-AB8B-6BBEC65094AD}|Cinema.csproj|c:\\netpractice\\netpractice\\models\\booking.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CF7CC119-BABD-40BB-AB8B-6BBEC65094AD}|Cinema.csproj|solutionrelative:models\\booking.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{CF7CC119-BABD-40BB-AB8B-6BBEC65094AD}|Cinema.csproj|c:\\netpractice\\netpractice\\models\\film.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{CF7CC119-BABD-40BB-AB8B-6BBEC65094AD}|Cinema.csproj|solutionrelative:models\\film.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{CF7CC119-BABD-40BB-AB8B-6BBEC65094AD}|Cinema.csproj|c:\\netpractice\\netpractice\\models\\booking.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CF7CC119-BABD-40BB-AB8B-6BBEC65094AD}|Cinema.csproj|solutionrelative:models\\booking.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\NetPractice\\NetPractice\\Migrations\\20240502154841_InitialCreate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Migrations\\20240502154841_InitialCreate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{CF7CC119-BABD-40BB-AB8B-6BBEC65094AD}|Cinema.csproj|c:\\netpractice\\netpractice\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CF7CC119-BABD-40BB-AB8B-6BBEC65094AD}|Cinema.csproj|solutionrelative:models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{CF7CC119-BABD-40BB-AB8B-6BBEC65094AD}|Cinema.csproj|c:\\netpractice\\netpractice\\models\\hall.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CF7CC119-BABD-40BB-AB8B-6BBEC65094AD}|Cinema.csproj|solutionrelative:models\\hall.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{CF7CC119-BABD-40BB-AB8B-6BBEC65094AD}|Cinema.csproj|c:\\netpractice\\netpractice\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
@@ -64,7 +72,7 @@
         },
         {
           "DockedWidth": 304,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 10,
           "Children": [
             {
               "$type": "Bookmark",
@@ -72,32 +80,46 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 4,
+              "Title": "20240502155343_InitialCreate.cs",
+              "DocumentMoniker": "C:\\NetPractice\\NetPractice\\Migrations\\20240502155343_InitialCreate.cs",
+              "RelativeDocumentMoniker": "Migrations\\20240502155343_InitialCreate.cs",
+              "ToolTip": "C:\\NetPractice\\NetPractice\\Migrations\\20240502155343_InitialCreate.cs",
+              "RelativeToolTip": "Migrations\\20240502155343_InitialCreate.cs",
+              "ViewState": "AQIAADMAAAAAAAAAAAAAADsAAAAxAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-02T15:53:43.942Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "20240502154841_InitialCreate.cs",
+              "DocumentMoniker": "C:\\NetPractice\\NetPractice\\Migrations\\20240502154841_InitialCreate.cs",
+              "RelativeDocumentMoniker": "Migrations\\20240502154841_InitialCreate.cs",
+              "ToolTip": "C:\\NetPractice\\NetPractice\\Migrations\\20240502154841_InitialCreate.cs",
+              "RelativeToolTip": "Migrations\\20240502154841_InitialCreate.cs",
+              "ViewState": "AQIAAG8AAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-02T15:48:41.656Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
               "Title": "Seed.cs",
               "DocumentMoniker": "C:\\NetPractice\\NetPractice\\Seed.cs",
               "RelativeDocumentMoniker": "Seed.cs",
               "ToolTip": "C:\\NetPractice\\NetPractice\\Seed.cs",
               "RelativeToolTip": "Seed.cs",
-              "ViewState": "AQIAAM8AAAAAAAAAAAAAAIMAAAAjAAAA",
+              "ViewState": "AQIAAAYAAAAAAAAAAAAAABAAAAAeAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-05-01T11:53:59.417Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "appsettings.json",
-              "DocumentMoniker": "C:\\NetPractice\\NetPractice\\appsettings.json",
-              "RelativeDocumentMoniker": "appsettings.json",
-              "ToolTip": "C:\\NetPractice\\NetPractice\\appsettings.json",
-              "RelativeToolTip": "appsettings.json",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAQAAAAOAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2024-05-01T11:36:09.097Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 2,
               "Title": "User.cs",
               "DocumentMoniker": "C:\\NetPractice\\NetPractice\\Models\\User.cs",
               "RelativeDocumentMoniker": "Models\\User.cs",
@@ -110,33 +132,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "Screening.cs",
               "DocumentMoniker": "C:\\NetPractice\\NetPractice\\Models\\Screening.cs",
               "RelativeDocumentMoniker": "Models\\Screening.cs",
               "ToolTip": "C:\\NetPractice\\NetPractice\\Models\\Screening.cs",
               "RelativeToolTip": "Models\\Screening.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAAXAAAA",
+              "ViewState": "AQIAAAMAAAAAAAAAAAAAAAoAAAAZAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-05-01T09:41:32.702Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "Hall.cs",
-              "DocumentMoniker": "C:\\NetPractice\\NetPractice\\Models\\Hall.cs",
-              "RelativeDocumentMoniker": "Models\\Hall.cs",
-              "ToolTip": "C:\\NetPractice\\NetPractice\\Models\\Hall.cs",
-              "RelativeToolTip": "Models\\Hall.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-01T09:41:24.787Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 7,
               "Title": "Film.cs",
               "DocumentMoniker": "C:\\NetPractice\\NetPractice\\Models\\Film.cs",
               "RelativeDocumentMoniker": "Models\\Film.cs",
@@ -162,19 +171,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 11,
               "Title": "README.md",
               "DocumentMoniker": "C:\\NetPractice\\NetPractice\\README.md",
               "RelativeDocumentMoniker": "README.md",
               "ToolTip": "C:\\NetPractice\\NetPractice\\README.md",
               "RelativeToolTip": "README.md",
-              "ViewState": "AQIAAAYAAAAAAAAAAAAAAA8AAAAHAAAA",
+              "ViewState": "AQIAAAQAAAAAAAAAAABBwA8AAAAHAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001818|",
-              "WhenOpened": "2024-05-01T09:22:01.143Z"
+              "WhenOpened": "2024-05-01T09:22:01.143Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 12,
               "Title": "Cinema.csproj",
               "DocumentMoniker": "C:\\NetPractice\\NetPractice\\Cinema.csproj",
               "RelativeDocumentMoniker": "Cinema.csproj",
@@ -182,32 +192,59 @@
               "RelativeToolTip": "Cinema.csproj",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2024-04-27T12:40:31.013Z"
+              "WhenOpened": "2024-04-27T12:40:31.013Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 0,
+              "Title": "DataContext.cs",
+              "DocumentMoniker": "C:\\NetPractice\\NetPractice\\Data\\DataContext.cs",
+              "RelativeDocumentMoniker": "Data\\DataContext.cs",
+              "ToolTip": "C:\\NetPractice\\NetPractice\\Data\\DataContext.cs",
+              "RelativeToolTip": "Data\\DataContext.cs",
+              "ViewState": "AQIAAAMAAAAAAAAAAAAAAA0AAAAhAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-27T14:38:23.621Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "Hall.cs",
+              "DocumentMoniker": "C:\\NetPractice\\NetPractice\\Models\\Hall.cs",
+              "RelativeDocumentMoniker": "Models\\Hall.cs",
+              "ToolTip": "C:\\NetPractice\\NetPractice\\Models\\Hall.cs",
+              "RelativeToolTip": "Models\\Hall.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-01T09:41:24.787Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\NetPractice\\NetPractice\\Program.cs",
               "RelativeDocumentMoniker": "Program.cs",
               "ToolTip": "C:\\NetPractice\\NetPractice\\Program.cs",
               "RelativeToolTip": "Program.cs",
-              "ViewState": "AQIAAAMAAAAAAAAAAAAAABkAAAAAAAAA",
+              "ViewState": "AQIAAAgAAAAAAAAAAAAUwCAAAAAFAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-04-27T00:02:31.489Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "DataContext.cs",
-              "DocumentMoniker": "C:\\NetPractice\\NetPractice\\Data\\DataContext.cs",
-              "RelativeDocumentMoniker": "Data\\DataContext.cs",
-              "ToolTip": "C:\\NetPractice\\NetPractice\\Data\\DataContext.cs",
-              "RelativeToolTip": "Data\\DataContext.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-27T14:38:23.621Z",
+              "DocumentIndex": 10,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\NetPractice\\NetPractice\\appsettings.json",
+              "RelativeDocumentMoniker": "appsettings.json",
+              "ToolTip": "C:\\NetPractice\\NetPractice\\appsettings.json",
+              "RelativeToolTip": "appsettings.json",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAQAAAAOAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2024-05-01T11:36:09.097Z",
               "EditorCaption": ""
             }
           ]

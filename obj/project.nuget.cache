@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "7I8fJ/pzp4K2S0vBRhdrHPutm/lDdwrcqOkRWx2oFrpEeD0z5A0cr+CS852nrp33KdZgYX70dv24GjxVlO/FNg==",
+  "dgSpecHash": "un5yheFE+mdV+4j7JtKcGMxlytOMNEM0MijLjRt2ybcOsiTnEuaxWa+TpgtUd1tey8BgGCE5a0GZiNiz6+pl1Q==",
   "success": true,
   "projectFilePath": "C:\\NetPractice\\NetPractice\\Cinema.csproj",
   "expectedPackageFiles": [
@@ -22,6 +22,7 @@
     "C:\\Users\\Магазин\\.nuget\\packages\\microsoft.entityframeworkcore.design\\8.0.4\\microsoft.entityframeworkcore.design.8.0.4.nupkg.sha512",
     "C:\\Users\\Магазин\\.nuget\\packages\\microsoft.entityframeworkcore.relational\\8.0.4\\microsoft.entityframeworkcore.relational.8.0.4.nupkg.sha512",
     "C:\\Users\\Магазин\\.nuget\\packages\\microsoft.entityframeworkcore.sqlserver\\8.0.4\\microsoft.entityframeworkcore.sqlserver.8.0.4.nupkg.sha512",
+    "C:\\Users\\Магазин\\.nuget\\packages\\microsoft.entityframeworkcore.tools\\8.0.4\\microsoft.entityframeworkcore.tools.8.0.4.nupkg.sha512",
     "C:\\Users\\Магазин\\.nuget\\packages\\microsoft.extensions.apidescription.server\\6.0.5\\microsoft.extensions.apidescription.server.6.0.5.nupkg.sha512",
     "C:\\Users\\Магазин\\.nuget\\packages\\microsoft.extensions.caching.abstractions\\8.0.0\\microsoft.extensions.caching.abstractions.8.0.0.nupkg.sha512",
     "C:\\Users\\Магазин\\.nuget\\packages\\microsoft.extensions.caching.memory\\8.0.0\\microsoft.extensions.caching.memory.8.0.0.nupkg.sha512",

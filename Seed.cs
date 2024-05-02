@@ -1,7 +1,7 @@
 ﻿using Cinema.Data;
 using Cinema.Models;
 
-namespace CinemaReviewApp
+namespace Cinema
 {
     public class Seed
     {
