@@ -13,6 +13,21 @@ namespace Cinema.Repository
             _context = context;
         }
 
+        public bool FilmExists(int filmId)
+        {
+            return _context.Films.Any(f => f.FilmId == filmId);
+        }
+
+        public Film GetFilm(int filmId)
+        {
+            return _context.Films.Where(f => f.FilmId == filmId).FirstOrDefault();
+        }
+
+        public Film GetFilm(string title)
+        {
+            return _context.Films.Where(f => f.Title == title).FirstOrDefault();
+        }
+
         public ICollection<Film> GetFilms()
         {
             return _context.Films.OrderBy(f => f.FilmId).ToList();
