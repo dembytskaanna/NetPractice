@@ -304,3 +304,4 @@ C:\NetPractice\NetPractice\obj\Debug\net8.0\refint\Cinema.dll
 C:\NetPractice\NetPractice\obj\Debug\net8.0\Cinema.pdb
 C:\NetPractice\NetPractice\obj\Debug\net8.0\Cinema.genruntimeconfig.cache
 C:\NetPractice\NetPractice\obj\Debug\net8.0\ref\Cinema.dll
+C:\Users\Антонина\source\repos\NetPractice\bin\Debug\net8.0\AutoMapper.dll
