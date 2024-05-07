@@ -47,5 +47,17 @@ namespace Cinema.Controllers
             return Ok(film);
         }
 
+        [HttpGet("screenings/{filmId}")]
+        [ProducesResponseType(200, Type = typeof(IEnumerable<Screening>))]
+        [ProducesResponseType(400)]
+        public IActionResult GetScreeningsByFilm(int filmId)
+        {
+            if (!_filmRepository.FilmExists(filmId))
+                return NotFound();
+            var screenings = _mapper.Map<List<ScreeningDto>>(_filmRepository.GetScreeningsByFilm(filmId));
+            if (!ModelState.IsValid)
+                return BadRequest(ModelState);
+            return Ok(screenings);
+        }
     }
 }
