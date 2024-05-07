@@ -9,9 +9,10 @@ namespace Cinema.Helper
         public MappingProfiles()
         {
             CreateMap<Film, FilmDto>();
-            CreateMap <Hall, HallDto>();
+            CreateMap<Hall, HallDto>();
             CreateMap<Screening, ScreeningDto>();
             CreateMap<Booking, BookingDto>();
+            CreateMap<User, UserDto>();
         }
     }
 }
