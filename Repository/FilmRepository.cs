@@ -32,5 +32,9 @@ namespace Cinema.Repository
         {
             return _context.Films.OrderBy(f => f.FilmId).ToList();
         }
+        public ICollection<Screening> GetScreeningsByFilm(int filmId)
+        {
+            return _context.Screenings.Where(s => s.FilmId == filmId).ToList();
+        }
     }
 }

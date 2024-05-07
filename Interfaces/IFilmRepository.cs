@@ -8,5 +8,6 @@ namespace Cinema.Interfaces
         Film GetFilm(int filmId);
         Film GetFilm(string title);  
         bool FilmExists(int filmId);
+        ICollection<Screening> GetScreeningsByFilm(int filmId);
     }
 }
