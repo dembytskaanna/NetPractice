@@ -28,10 +28,21 @@ namespace Cinema.Repository
             return _context.Users.Any(u => u.UserId == userId);
         }
 
+        public bool CreateUser(User user)
+        {
+            _context.Add(user);
+            return Save();
+        }
+
         public ICollection<Booking> GetBookingsByUser(int userId)
         {
             return _context.Bookings.Where(b => b.UserId == userId).ToList();
         }
 
+        public bool Save()
+        {
+            var saved = _context.SaveChanges();
+            return saved > 0 ? true : false;
+        }
     }
 }

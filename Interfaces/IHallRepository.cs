@@ -8,5 +8,7 @@ namespace Cinema.Interfaces
         Hall GetHall(int hallId);
         ICollection<Screening> GetScreeningByHall(int hallId);
         bool HallExists(int hallId);
+        bool CreateHall(Hall hall);
+        bool Save();
     }
 }

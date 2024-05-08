@@ -31,5 +31,17 @@ namespace Cinema.Repository
         {
             return _context.Halls.Any(h => h.HallId == hallId);
         }
+
+        public bool CreateHall(Hall hall)
+        {
+            _context.Add(hall);
+            return Save();
+        }
+
+        public bool Save()
+        {
+            var saved = _context.SaveChanges();
+            return saved > 0 ? true : false;
+        }
     }
 }

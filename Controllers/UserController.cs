@@ -2,6 +2,7 @@
 using Cinema.Dto;
 using Cinema.Interfaces;
 using Cinema.Models;
+using Cinema.Repository;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Cinema.Controllers
@@ -61,6 +62,39 @@ namespace Cinema.Controllers
                 return BadRequest(ModelState);
 
             return Ok(bookings);
+        }
+
+        [HttpPost]
+        [ProducesResponseType(204)]
+        [ProducesResponseType(400)]
+
+        public IActionResult CreateUser([FromBody] UserDto userCreate)
+        {
+            if (userCreate == null)
+                return BadRequest(ModelState);
+
+            var user = _userRepository.GetUsers()
+                .Where(u => u.Email.Trim().ToUpper() == userCreate.Email.TrimEnd().ToUpper())
+                .FirstOrDefault();
+
+            if (user != null)
+            {
+                ModelState.AddModelError("", "User alredy exists");
+                return StatusCode(422, ModelState);
+            }
+
+            if (!ModelState.IsValid)
+                return BadRequest(ModelState);
+
+            var userMap = _mapper.Map<User>(userCreate);
+
+            if (!_userRepository.CreateUser(userMap))
+            {
+                ModelState.AddModelError("", "Something went wrong while saving");
+                return StatusCode(500, ModelState);
+            }
+
+            return Ok("Successfully created");
         }
     }
 }

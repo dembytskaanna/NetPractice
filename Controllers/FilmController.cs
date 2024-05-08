@@ -59,5 +59,38 @@ namespace Cinema.Controllers
                 return BadRequest(ModelState);
             return Ok(screenings);
         }
+
+        [HttpPost]
+        [ProducesResponseType(204)]
+        [ProducesResponseType(400)]
+
+        public IActionResult CreateFilm([FromBody] FilmDto filmCreate)
+        {
+            if (filmCreate == null)
+                return BadRequest(ModelState);
+
+            var film = _filmRepository.GetFilms()
+                .Where(f => f.Title.Trim().ToUpper() == filmCreate.Title.TrimEnd().ToUpper())
+                .FirstOrDefault();
+
+            if (film != null)
+            {
+                ModelState.AddModelError("", "Film alredy exists");
+                return StatusCode(422, ModelState);
+            }
+
+            if (!ModelState.IsValid)
+                return BadRequest(ModelState);
+
+            var filmMap = _mapper.Map<Film>(filmCreate);
+
+            if (!_filmRepository.CreateFilm(filmMap))
+            {
+                ModelState.AddModelError("", "Something went wrong while saving");
+                return StatusCode(500, ModelState);
+            }
+
+            return Ok("Successfully created");
+        }
     }
 }
