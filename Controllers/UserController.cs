@@ -68,7 +68,7 @@ namespace Cinema.Controllers
         [ProducesResponseType(204)]
         [ProducesResponseType(400)]
 
-        public IActionResult CreateUser([FromBody] UserDto userCreate)
+        public IActionResult CreateUser([FromBody] UserRegistrationDto userCreate)
         {
             if (userCreate == null)
                 return BadRequest(ModelState);
