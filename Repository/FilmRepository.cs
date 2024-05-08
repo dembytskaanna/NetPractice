@@ -18,6 +18,12 @@ namespace Cinema.Repository
             return _context.Films.Any(f => f.FilmId == filmId);
         }
 
+        public bool CreateFilm(Film film)
+        {
+            _context.Add(film);
+            return Save();
+        }
+
         public Film GetFilm(int filmId)
         {
             return _context.Films.Where(f => f.FilmId == filmId).FirstOrDefault();
@@ -32,9 +38,16 @@ namespace Cinema.Repository
         {
             return _context.Films.OrderBy(f => f.FilmId).ToList();
         }
+
         public ICollection<Screening> GetScreeningsByFilm(int filmId)
         {
             return _context.Screenings.Where(s => s.FilmId == filmId).ToList();
+        }
+
+        public bool Save()
+        {
+            var saved = _context.SaveChanges();
+            return saved > 0 ? true : false;
         }
     }
 }

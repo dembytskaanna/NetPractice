@@ -63,5 +63,38 @@ namespace Cinema.Controllers
 
             return Ok(screenings);
         }
+
+        [HttpPost]
+        [ProducesResponseType(204)]
+        [ProducesResponseType(400)]
+
+        public IActionResult CreateHall([FromBody] HallDto hallCreate)
+        {
+            if (hallCreate == null)
+                return BadRequest(ModelState);
+
+            var hall = _hallRepository.GetHalls()
+                .Where(h => h.Name.Trim().ToUpper() == hallCreate.Name.TrimEnd().ToUpper())
+                .FirstOrDefault();
+
+            if (hall != null)
+            {
+                ModelState.AddModelError("", "Hall alredy exists");
+                return StatusCode(422, ModelState);
+            }
+
+            if (!ModelState.IsValid)
+                return BadRequest(ModelState);
+
+            var hallMap = _mapper.Map<Hall>(hallCreate);
+
+            if (!_hallRepository.CreateHall(hallMap))
+            {
+                ModelState.AddModelError("", "Something went wrong while saving");
+                return StatusCode(500, ModelState);
+            }
+
+            return Ok("Successfully created");
+        }
     }
 }

@@ -1,7 +1,14 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\Controllers",
+    "\\Data",
+    "\\Dto",
+    "\\Helper",
+    "\\Interfaces",
+    "\\Models",
+    "\\Repository"
   ],
-  "SelectedNode": "\\Cinema.sln",
+  "SelectedNode": "\\Dto\\BookingDto.cs",
   "PreviewInSolutionExplorer": false
 }
