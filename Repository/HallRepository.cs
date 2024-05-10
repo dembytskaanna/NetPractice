@@ -43,5 +43,11 @@ namespace Cinema.Repository
             var saved = _context.SaveChanges();
             return saved > 0 ? true : false;
         }
+
+        public bool UpdateHall(Hall hall)
+        {
+            _context.Update(hall);
+            return Save();
+        }
     }
 }

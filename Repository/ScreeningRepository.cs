@@ -45,5 +45,11 @@ namespace Cinema.Repository
             var saved = _context.SaveChanges();
             return saved > 0 ? true : false;
         }
+
+        public bool UpdateScreening(Screening screening)
+        {
+            _context.Update(screening);
+            return Save();
+        }
     }
 }

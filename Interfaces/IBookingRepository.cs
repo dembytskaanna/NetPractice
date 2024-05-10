@@ -10,6 +10,7 @@ namespace Cinema.Interfaces
         Screening GetScreeningByBooking(int bookingId);
         bool BookingExists(int bookingId);
         bool CreateBooking(Booking booking);
+        bool UpdateBooking(Booking booking);
         bool Save();
     }
 }

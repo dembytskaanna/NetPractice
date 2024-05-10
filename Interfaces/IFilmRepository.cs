@@ -10,6 +10,7 @@ namespace Cinema.Interfaces
         bool FilmExists(int filmId);
         ICollection<Screening> GetScreeningsByFilm(int filmId);
         bool CreateFilm(Film film);
+        bool UpdateFilm(Film film); 
         bool Save();
     }
 }
