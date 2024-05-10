@@ -1,4 +1,5 @@
-﻿using Cinema.Data;
+﻿using System;
+using Cinema.Data;
 using Cinema.Interfaces;
 using Cinema.Models;
 
@@ -31,6 +32,24 @@ namespace Cinema.Repository
         public bool ScreeningExists(int screeningId)
         {
             return _context.Screenings.Any(s => s.ScreeningId == screeningId);
+        }
+
+        public bool CreateScreening(Screening screening)
+        {
+            _context.Add(screening);
+            return Save();
+        }
+
+        public bool Save()
+        {
+            var saved = _context.SaveChanges();
+            return saved > 0 ? true : false;
+        }
+
+        public bool UpdateScreening(Screening screening)
+        {
+            _context.Update(screening);
+            return Save();
         }
     }
 }

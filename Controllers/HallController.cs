@@ -96,5 +96,34 @@ namespace Cinema.Controllers
 
             return Ok("Successfully created");
         }
+
+        [HttpPut("{hallId}")]
+        [ProducesResponseType(400)]
+        [ProducesResponseType(204)]
+        [ProducesResponseType(404)]
+        public IActionResult UpdateHall(int hallId, [FromBody] HallDto updatedHall)
+        {
+            if (updatedHall == null)
+                return BadRequest(ModelState);
+
+            if (hallId != updatedHall.HallId)
+                return BadRequest(ModelState);
+
+            if (!_hallRepository.HallExists(hallId))
+                return NotFound();
+
+            if (!ModelState.IsValid)
+                return BadRequest(ModelState);
+
+            var hallMap = _mapper.Map<Hall>(updatedHall);
+
+            if (!_hallRepository.UpdateHall(hallMap))
+            {
+                ModelState.AddModelError("", "Something went wrong updating booking");
+                return StatusCode(500, ModelState);
+            }
+
+            return NoContent();
+        }
     }
 }

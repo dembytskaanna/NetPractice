@@ -6,9 +6,11 @@
     "\\Dto",
     "\\Helper",
     "\\Interfaces",
+    "\\Migrations",
     "\\Models",
+    "\\Properties",
     "\\Repository"
   ],
-  "SelectedNode": "\\Dto\\BookingDto.cs",
+  "SelectedNode": "\\Dto\\UserRegistrationDto.cs",
   "PreviewInSolutionExplorer": false
 }

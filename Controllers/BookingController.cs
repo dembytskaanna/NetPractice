@@ -80,5 +80,60 @@ namespace Cinema.Controllers
 
             return Ok(screening);
         }
+
+        [HttpPost]
+        [ProducesResponseType(204)]
+        [ProducesResponseType(400)]
+
+        public IActionResult CreateBooking([FromBody] BookingDto bookingCreate)
+        {
+            if (bookingCreate == null)
+                return BadRequest(ModelState);
+
+
+            if (!ModelState.IsValid)
+                return BadRequest(ModelState);
+
+            var bookingMap = _mapper.Map<Booking>(bookingCreate);
+
+
+            if (!_bookingRepository.CreateBooking(bookingMap))
+            {
+                ModelState.AddModelError("", "Something went wrong while saving");
+                return StatusCode(500, ModelState);
+            }
+
+            return Ok("Successfully created");
+        }
+
+        [HttpPut("{bookingId}")]
+        [ProducesResponseType(400)]
+        [ProducesResponseType(204)]
+        [ProducesResponseType(404)]
+        public IActionResult UpdateBooking(int bookingId, [FromBody] BookingDto updatedBooking)
+        {
+            if(updatedBooking == null)
+                return BadRequest(ModelState);
+
+            if(bookingId != updatedBooking.BookingId)
+                return BadRequest(ModelState);
+
+            if (!_bookingRepository.BookingExists(bookingId))
+                return NotFound();
+
+            if(!ModelState.IsValid)
+                return BadRequest(ModelState);
+
+            var bookingMap = _mapper.Map<Booking>(updatedBooking);
+
+            if(!_bookingRepository.UpdateBooking(bookingMap))
+            {
+                ModelState.AddModelError("", "Something went wrong updating booking");
+                return StatusCode(500, ModelState);
+            }
+
+            return NoContent();
+        }
+
     }
 }

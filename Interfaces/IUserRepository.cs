@@ -9,6 +9,7 @@ namespace Cinema.Interfaces
         ICollection<Booking> GetBookingsByUser(int userId);
         bool UserExists(int userId);
         bool CreateUser(User user);
+        bool UpdateUser(User user);
         bool Save();
     }
 }
