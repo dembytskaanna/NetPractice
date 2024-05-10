@@ -89,5 +89,34 @@ namespace Cinema.Controllers
             return Ok("Successfully created");
         }
 
+        [HttpPut("{screeningId}")]
+        [ProducesResponseType(400)]
+        [ProducesResponseType(204)]
+        [ProducesResponseType(404)]
+        public IActionResult UpdateScreening(int screeningId, [FromBody] ScreeningDto updatedScreening)
+        {
+            if (updatedScreening == null)
+                return BadRequest(ModelState);
+
+            if (screeningId != updatedScreening.ScreeningId)
+                return BadRequest(ModelState);
+
+            if (!_screeningRepository.ScreeningExists(screeningId))
+                return NotFound();
+
+            if (!ModelState.IsValid)
+                return BadRequest(ModelState);
+
+            var screeningMap = _mapper.Map<Screening>(updatedScreening);
+
+            if (!_screeningRepository.UpdateScreening(screeningMap))
+            {
+                ModelState.AddModelError("", "Something went wrong updating booking");
+                return StatusCode(500, ModelState);
+            }
+
+            return NoContent();
+        }
+
     }
 }

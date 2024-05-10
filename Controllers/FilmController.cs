@@ -3,6 +3,7 @@ using Cinema.Interfaces;
 using Cinema.Models;
 using AutoMapper;
 using Cinema.Dto;
+using Cinema.Repository;
 
 namespace Cinema.Controllers
 {
@@ -91,6 +92,35 @@ namespace Cinema.Controllers
             }
 
             return Ok("Successfully created");
+        }
+
+        [HttpPut("{filmId}")]
+        [ProducesResponseType(400)]
+        [ProducesResponseType(204)]
+        [ProducesResponseType(404)]
+        public IActionResult UpdateFilm(int filmId, [FromBody] FilmDto updatedFilm)
+        {
+            if (updatedFilm == null)
+                return BadRequest(ModelState);
+
+            if (filmId != updatedFilm.FilmId)
+                return BadRequest(ModelState);
+
+            if (!_filmRepository.FilmExists(filmId))
+                return NotFound();
+
+            if (!ModelState.IsValid)
+                return BadRequest(ModelState);
+
+            var filmMap = _mapper.Map<Film>(updatedFilm);
+
+            if (!_filmRepository.UpdateFilm(filmMap))
+            {
+                ModelState.AddModelError("", "Something went wrong updating booking");
+                return StatusCode(500, ModelState);
+            }
+
+            return NoContent();
         }
     }
 }

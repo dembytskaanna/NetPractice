@@ -48,5 +48,11 @@ namespace Cinema.Repository
             var saved = _context.SaveChanges();
             return saved > 0 ? true : false;
         }
+
+        public bool UpdateBooking(Booking booking)
+        {
+            _context.Update(booking);
+            return Save();
+        }
     }
 }
