@@ -63,5 +63,31 @@ namespace Cinema.Controllers
 
             return Ok(bookings);
         }
+
+        [HttpPost]
+        [ProducesResponseType(204)]
+        [ProducesResponseType(400)]
+
+        public IActionResult CreateScreening([FromBody] ScreeningDto screeningCreate)
+        {
+            if (screeningCreate == null)
+                return BadRequest(ModelState);
+
+
+            if (!ModelState.IsValid)
+                return BadRequest(ModelState);
+
+            var screeningMap = _mapper.Map<Screening>(screeningCreate);
+
+
+            if (!_screeningRepository.CreateScreening(screeningMap))
+            {
+                ModelState.AddModelError("", "Something went wrong while saving");
+                return StatusCode(500, ModelState);
+            }
+
+            return Ok("Successfully created");
+        }
+
     }
 }

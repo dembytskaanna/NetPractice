@@ -8,5 +8,7 @@ namespace Cinema.Interfaces
         Screening GetScreening(int screeningId);
         ICollection <Booking> GetBookingsByScreening (int screeningId);
         bool ScreeningExists(int screeningId);
+        bool CreateScreening(Screening screening);
+        bool Save();
     }
 }

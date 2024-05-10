@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\NetPractice\\NetPractice\\NetPractice\\Cinema.csproj": {}
+    "C:\\Users\\Velviki\\source\\repos\\dembytskaanna\\NetPractice\\Cinema.csproj": {}
   },
   "projects": {
-    "C:\\NetPractice\\NetPractice\\NetPractice\\Cinema.csproj": {
+    "C:\\Users\\Velviki\\source\\repos\\dembytskaanna\\NetPractice\\Cinema.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\NetPractice\\NetPractice\\NetPractice\\Cinema.csproj",
+        "projectUniqueName": "C:\\Users\\Velviki\\source\\repos\\dembytskaanna\\NetPractice\\Cinema.csproj",
         "projectName": "Cinema",
-        "projectPath": "C:\\NetPractice\\NetPractice\\NetPractice\\Cinema.csproj",
-        "packagesPath": "C:\\Users\\Магазин\\.nuget\\packages\\",
-        "outputPath": "C:\\NetPractice\\NetPractice\\NetPractice\\obj\\",
+        "projectPath": "C:\\Users\\Velviki\\source\\repos\\dembytskaanna\\NetPractice\\Cinema.csproj",
+        "packagesPath": "C:\\Users\\Velviki\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Velviki\\source\\repos\\dembytskaanna\\NetPractice\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Магазин\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Velviki\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [

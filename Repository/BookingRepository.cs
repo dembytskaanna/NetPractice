@@ -37,5 +37,16 @@ namespace Cinema.Repository
         {
             return _context.Screenings.Where(s => s.Boookings.Any(b => b.BookingId == bookingId)).FirstOrDefault();
         }
+        public bool CreateBooking(Booking booking)
+        {
+            _context.Add(booking);
+            return Save();
+        }
+
+        public bool Save()
+        {
+            var saved = _context.SaveChanges();
+            return saved > 0 ? true : false;
+        }
     }
 }
