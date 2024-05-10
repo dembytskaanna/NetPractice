@@ -10,6 +10,7 @@ namespace Cinema.Interfaces
         bool ScreeningExists(int screeningId);
         bool CreateScreening(Screening screening);
         bool UpdateScreening(Screening screening);
+        bool DeleteScreening(Screening screening);
         bool Save();
     }
 }

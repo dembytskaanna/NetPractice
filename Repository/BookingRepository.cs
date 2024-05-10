@@ -54,5 +54,11 @@ namespace Cinema.Repository
             _context.Update(booking);
             return Save();
         }
+
+        public bool DeleteBooking(Booking booking)
+        {
+            _context.Remove(booking);
+            return Save();
+        }
     }
 }

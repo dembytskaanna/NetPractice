@@ -55,5 +55,11 @@ namespace Cinema.Repository
             _context.Update(film);
             return Save();
         }
+
+        public bool DeleteFilm(Film film)
+        {
+            _context.Remove(film);
+            return Save();
+        }
     }
 }

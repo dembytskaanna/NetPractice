@@ -125,5 +125,30 @@ namespace Cinema.Controllers
 
             return NoContent();
         }
+
+
+        [HttpDelete("{hallId}")]
+        [ProducesResponseType(400)]
+        [ProducesResponseType(204)]
+        [ProducesResponseType(404)]
+        public IActionResult DeleteFilm(int hallId)
+        {
+            if (!_hallRepository.HallExists(hallId))
+            {
+                return NotFound();
+            }
+
+            var hallToDelete = _hallRepository.GetHall(hallId);
+
+            if (!ModelState.IsValid)
+                return BadRequest(ModelState);
+
+            if (!_hallRepository.DeleteHall(hallToDelete))
+            {
+                ModelState.AddModelError("", "Something went wrong deleting booking");
+            }
+
+            return NoContent();
+        }
     }
 }

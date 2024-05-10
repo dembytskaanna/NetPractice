@@ -51,5 +51,11 @@ namespace Cinema.Repository
             _context.Update(screening);
             return Save();
         }
+
+        public bool DeleteScreening(Screening screening)
+        {
+            _context.Remove(screening);
+            return Save();
+        }
     }
 }
