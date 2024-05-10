@@ -10,6 +10,7 @@ namespace Cinema.Interfaces
         bool HallExists(int hallId);
         bool CreateHall(Hall hall);
         bool UpdateHall(Hall hall); 
+        bool DeleteHall(Hall hall);
         bool Save();
     }
 }

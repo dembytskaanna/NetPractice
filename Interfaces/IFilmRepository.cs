@@ -11,6 +11,7 @@ namespace Cinema.Interfaces
         ICollection<Screening> GetScreeningsByFilm(int filmId);
         bool CreateFilm(Film film);
         bool UpdateFilm(Film film); 
+        bool DeleteFilm(Film film);
         bool Save();
     }
 }

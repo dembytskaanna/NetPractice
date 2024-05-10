@@ -49,5 +49,11 @@ namespace Cinema.Repository
             _context.Update(hall);
             return Save();
         }
+
+        public bool DeleteHall(Hall hall)
+        {
+            _context.Remove(hall);
+            return Save();
+        }
     }
 }

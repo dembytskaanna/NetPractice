@@ -122,5 +122,29 @@ namespace Cinema.Controllers
 
             return NoContent();
         }
+
+        [HttpDelete("{filmId}")]
+        [ProducesResponseType(400)]
+        [ProducesResponseType(204)]
+        [ProducesResponseType(404)]
+        public IActionResult DeleteFilm(int filmId)
+        {
+            if (!_filmRepository.FilmExists(filmId))
+            {
+                return NotFound();
+            }
+
+            var filmToDelete = _filmRepository.GetFilm(filmId);
+
+            if (!ModelState.IsValid)
+                return BadRequest(ModelState);
+
+            if (!_filmRepository.DeleteFilm(filmToDelete))
+            {
+                ModelState.AddModelError("", "Something went wrong deleting booking");
+            }
+
+            return NoContent();
+        }
     }
 }

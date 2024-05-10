@@ -11,6 +11,7 @@ namespace Cinema.Interfaces
         bool BookingExists(int bookingId);
         bool CreateBooking(Booking booking);
         bool UpdateBooking(Booking booking);
+        bool DeleteBooking(Booking booking);
         bool Save();
     }
 }
