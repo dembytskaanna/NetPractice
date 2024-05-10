@@ -13,7 +13,9 @@ namespace Cinema.Helper
             CreateMap<Hall, HallDto>();
             CreateMap<HallDto, Hall>();
             CreateMap<Screening, ScreeningDto>();
+            CreateMap<ScreeningDto, Screening>();
             CreateMap<Booking, BookingDto>();
+            CreateMap<BookingDto, Booking>();
             CreateMap<User, UserDto>();
             CreateMap<UserRegistrationDto, User>();
         }
