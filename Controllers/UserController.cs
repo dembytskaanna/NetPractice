@@ -3,6 +3,8 @@ using Cinema.Dto;
 using Cinema.Interfaces;
 using Cinema.Models;
 using Cinema.Repository;
+using Cinema.Services;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Cinema.Controllers
@@ -13,14 +15,16 @@ namespace Cinema.Controllers
     {
         private readonly IUserRepository _userRepository;
         private readonly IMapper _mapper;
+        private readonly IUserService _userService;
 
-        public UserController(IUserRepository userRepository, IMapper mapper)
+        public UserController(IUserRepository userRepository, IMapper mapper, IUserService userService)
         {
             _userRepository = userRepository;
             _mapper = mapper;
+            _userService = userService;
         }
 
-        [HttpGet]
+        [HttpGet, Authorize(Roles = "Admin")]
         [ProducesResponseType(200, Type = typeof(IEnumerable<User>))]
         public IActionResult GetUsers()
         {
@@ -32,7 +36,7 @@ namespace Cinema.Controllers
             return Ok(users);
         }
 
-        [HttpGet("{userId}")]
+        [HttpGet("{userId}"), Authorize(Roles = "Admin")]
         [ProducesResponseType(200, Type = typeof(User))]
         [ProducesResponseType(400)]
         public IActionResult GetUser(int userId)
@@ -48,13 +52,17 @@ namespace Cinema.Controllers
             return Ok(user);
         }
 
-        [HttpGet("bookings/{userId}")]
+        [HttpGet("bookings/{userId}"), Authorize]
         [ProducesResponseType(200, Type = typeof(IEnumerable<Booking>))]
         [ProducesResponseType(400)]
         public IActionResult GetBookingsByUser(int userId)
         {
             if (!_userRepository.UserExists(userId))
                 return NotFound();
+
+            int myId = _userService.GetMyId();
+            string myRole = _userService.GetMyRole();
+            if(myId != userId && myRole != "Admin") return Unauthorized();
 
             var bookings = _mapper.Map<List<BookingDto>>(_userRepository.GetBookingsByUser(userId));
 
@@ -64,45 +72,14 @@ namespace Cinema.Controllers
             return Ok(bookings);
         }
 
-        [HttpPost]
-        [ProducesResponseType(204)]
-        [ProducesResponseType(400)]
-
-        public IActionResult CreateUser([FromBody] UserRegistrationDto userCreate)
-        {
-            if (userCreate == null)
-                return BadRequest(ModelState);
-
-            var user = _userRepository.GetUsers()
-                .Where(u => u.Email.Trim().ToUpper() == userCreate.Email.TrimEnd().ToUpper())
-                .FirstOrDefault();
-
-            if (user != null)
-            {
-                ModelState.AddModelError("", "User alredy exists");
-                return StatusCode(422, ModelState);
-            }
-
-            if (!ModelState.IsValid)
-                return BadRequest(ModelState);
-
-            var userMap = _mapper.Map<User>(userCreate);
-
-            if (!_userRepository.CreateUser(userMap))
-            {
-                ModelState.AddModelError("", "Something went wrong while saving");
-                return StatusCode(500, ModelState);
-            }
-
-            return Ok("Successfully created");
-        }
-
-        [HttpPut("{userId}")]
+        [HttpPut("{userId}"), Authorize]
         [ProducesResponseType(400)]
         [ProducesResponseType(204)]
         [ProducesResponseType(404)]
         public IActionResult UpdateUser(int userId, [FromBody] UserRegistrationDto updatedUser)
         {
+            
+
             if (updatedUser == null)
                 return BadRequest(ModelState);
 
@@ -115,6 +92,11 @@ namespace Cinema.Controllers
             if (!ModelState.IsValid)
                 return BadRequest(ModelState);
 
+            int myId = _userService.GetMyId();
+            string myRole = _userService.GetMyRole();
+
+            if (myId != userId && myId != updatedUser.UserId) return Unauthorized();
+
             var userMap = _mapper.Map<User>(updatedUser);
 
             if (!_userRepository.UpdateUser(userMap))
@@ -126,7 +108,7 @@ namespace Cinema.Controllers
             return NoContent();
         }
 
-        [HttpDelete("{userId}")]
+        [HttpDelete("{userId}"), Authorize(Roles = "Admin")]
         [ProducesResponseType(400)]
         [ProducesResponseType(204)]
         [ProducesResponseType(404)]
@@ -139,6 +121,8 @@ namespace Cinema.Controllers
 
             var userToDelete = _userRepository.GetUser(userId);
 
+            if ((bool)userToDelete.IsAdmin) return BadRequest("Cannot delete admin");
+
             if (!ModelState.IsValid)
                 return BadRequest(ModelState);
 
@@ -146,6 +130,8 @@ namespace Cinema.Controllers
             {
                 ModelState.AddModelError("", "Something went wrong deleting booking");
             }
+
+
 
             return NoContent();
         }

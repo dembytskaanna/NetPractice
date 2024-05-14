@@ -720,3 +720,8 @@ C:\Users\Velviki\Source\Repos\dembytskaanna\NetPractice\obj\Debug\net8.0\refint\
 C:\Users\Velviki\Source\Repos\dembytskaanna\NetPractice\obj\Debug\net8.0\Cinema.pdb
 C:\Users\Velviki\Source\Repos\dembytskaanna\NetPractice\obj\Debug\net8.0\Cinema.genruntimeconfig.cache
 C:\Users\Velviki\Source\Repos\dembytskaanna\NetPractice\obj\Debug\net8.0\ref\Cinema.dll
+C:\NetPractice\NetPractice\NetPractice\bin\Debug\net8.0\BCrypt.Net-Next.dll
+C:\NetPractice\NetPractice\NetPractice\bin\Debug\net8.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+C:\NetPractice\NetPractice\NetPractice\bin\Debug\net8.0\Scrutor.dll
+C:\NetPractice\NetPractice\NetPractice\bin\Debug\net8.0\Swashbuckle.AspNetCore.Filters.dll
+C:\NetPractice\NetPractice\NetPractice\bin\Debug\net8.0\Swashbuckle.AspNetCore.Filters.Abstractions.dll

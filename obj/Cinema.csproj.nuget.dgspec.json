@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Velviki\\source\\repos\\dembytskaanna\\NetPractice\\Cinema.csproj": {}
+    "C:\\NetPractice\\NetPractice\\NetPractice\\Cinema.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Velviki\\source\\repos\\dembytskaanna\\NetPractice\\Cinema.csproj": {
+    "C:\\NetPractice\\NetPractice\\NetPractice\\Cinema.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Velviki\\source\\repos\\dembytskaanna\\NetPractice\\Cinema.csproj",
+        "projectUniqueName": "C:\\NetPractice\\NetPractice\\NetPractice\\Cinema.csproj",
         "projectName": "Cinema",
-        "projectPath": "C:\\Users\\Velviki\\source\\repos\\dembytskaanna\\NetPractice\\Cinema.csproj",
-        "packagesPath": "C:\\Users\\Velviki\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Velviki\\source\\repos\\dembytskaanna\\NetPractice\\obj\\",
+        "projectPath": "C:\\NetPractice\\NetPractice\\NetPractice\\Cinema.csproj",
+        "packagesPath": "C:\\Users\\Магазин\\.nuget\\packages\\",
+        "outputPath": "C:\\NetPractice\\NetPractice\\NetPractice\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Velviki\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Магазин\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -49,6 +49,14 @@
               "target": "Package",
               "version": "[13.0.1, )"
             },
+            "BCrypt.Net-Next": {
+              "target": "Package",
+              "version": "[4.0.3, )"
+            },
+            "Microsoft.AspNetCore.Authentication.JwtBearer": {
+              "target": "Package",
+              "version": "[8.0.4, )"
+            },
             "Microsoft.EntityFrameworkCore.Design": {
               "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
               "suppressParent": "All",
@@ -65,9 +73,21 @@
               "target": "Package",
               "version": "[8.0.4, )"
             },
+            "Microsoft.IdentityModel.Tokens": {
+              "target": "Package",
+              "version": "[7.5.2, )"
+            },
             "Swashbuckle.AspNetCore": {
               "target": "Package",
               "version": "[6.4.0, )"
+            },
+            "Swashbuckle.AspNetCore.Filters": {
+              "target": "Package",
+              "version": "[8.0.2, )"
+            },
+            "System.IdentityModel.Tokens.Jwt": {
+              "target": "Package",
+              "version": "[7.5.2, )"
             }
           },
           "imports": [

@@ -159,10 +159,13 @@ namespace Cinema.Migrations
                     b.Property<string>("FirstName")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("LastName")
+                    b.Property<string>("HashedPassword")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("Password")
+                    b.Property<bool?>("IsAdmin")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("LastName")
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("UserId");
@@ -173,7 +176,7 @@ namespace Cinema.Migrations
             modelBuilder.Entity("Cinema.Models.Booking", b =>
                 {
                     b.HasOne("Cinema.Models.Screening", "Screening")
-                        .WithMany("Boookings")
+                        .WithMany("Bookings")
                         .HasForeignKey("ScreeningId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -220,7 +223,7 @@ namespace Cinema.Migrations
 
             modelBuilder.Entity("Cinema.Models.Screening", b =>
                 {
-                    b.Navigation("Boookings");
+                    b.Navigation("Bookings");
                 });
 
             modelBuilder.Entity("Cinema.Models.User", b =>

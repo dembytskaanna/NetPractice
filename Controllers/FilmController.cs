@@ -4,6 +4,7 @@ using Cinema.Models;
 using AutoMapper;
 using Cinema.Dto;
 using Cinema.Repository;
+using Microsoft.AspNetCore.Authorization;
 
 namespace Cinema.Controllers
 {
@@ -61,7 +62,7 @@ namespace Cinema.Controllers
             return Ok(screenings);
         }
 
-        [HttpPost]
+        [HttpPost, Authorize(Roles ="Admin")]
         [ProducesResponseType(204)]
         [ProducesResponseType(400)]
 
@@ -94,7 +95,7 @@ namespace Cinema.Controllers
             return Ok("Successfully created");
         }
 
-        [HttpPut("{filmId}")]
+        [HttpPut("{filmId}"), Authorize(Roles = "Admin")]
         [ProducesResponseType(400)]
         [ProducesResponseType(204)]
         [ProducesResponseType(404)]
@@ -123,7 +124,7 @@ namespace Cinema.Controllers
             return NoContent();
         }
 
-        [HttpDelete("{filmId}")]
+        [HttpDelete("{filmId}"), Authorize(Roles = "Admin")]
         [ProducesResponseType(400)]
         [ProducesResponseType(204)]
         [ProducesResponseType(404)]
