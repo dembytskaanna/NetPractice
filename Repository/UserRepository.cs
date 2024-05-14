@@ -28,7 +28,7 @@ namespace Cinema.Repository
             return _context.Users.Any(u => u.UserId == userId);
         }
 
-        public bool CreateUser(User user)
+        public bool Register(User user)
         {
             _context.Add(user);
             return Save();

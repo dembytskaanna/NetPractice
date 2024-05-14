@@ -35,7 +35,7 @@ namespace Cinema.Repository
 
         public Screening GetScreeningByBooking(int bookingId)
         {
-            return _context.Screenings.Where(s => s.Boookings.Any(b => b.BookingId == bookingId)).FirstOrDefault();
+            return _context.Screenings.Where(s => s.Bookings.Any(b => b.BookingId == bookingId)).FirstOrDefault();
         }
         public bool CreateBooking(Booking booking)
         {

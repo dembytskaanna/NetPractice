@@ -202,13 +202,13 @@ namespace Cinema
             {
                 var users = new List<User>
                 {
-                    new User { FirstName = "Іван", LastName = "Петренко", Email = "ivan.petrenko@email.com", Password = "password123" },
-                    new User { FirstName = "Ольга", LastName = "Корольова", Email = "olga.korolova@email.com", Password = "qwerty123" },
-                    new User { FirstName = "Максим", LastName = "Сидоренко", Email = "maksym.sydorenko@email.com", Password = "securepass" },
-                    new User { FirstName = "Анна", LastName = "Кравчук", Email = "anna.kravchuk@email.com", Password = "pass456" },
-                    new User { FirstName = "Дмитро", LastName = "Ковальчук", Email = "dmytro.kovalchuk@email.com", Password = "mypassword" },
-                    new User { FirstName = "Софія", LastName = "Бондаренко", Email = "sofia.bondarenko@email.com", Password = "password789" },
-                    new User { FirstName = "Андрій", LastName = "Мельник", Email = "andrii.melnyk@email.com", Password = "pass123xyz" }
+                    new User { FirstName = "Іван", LastName = "Петренко", Email = "ivan.petrenko@email.com", HashedPassword = "$2a$12$JlrNmzlMu.h5ZYeHvoZAqu0OLI6YV/JuHobXWj3ZAQ3xXeZbTLgg2" },
+                    new User { FirstName = "Ольга", LastName = "Корольова", Email = "olga.korolova@email.com", HashedPassword = "$2a$12$JlrNmzlMu.h5ZYesdoZAqu0OLI6YV/JuHobXWj3ZAQ3xXeZbTLgg2" },
+                    new User { FirstName = "Максим", LastName = "Сидоренко", Email = "maksym.sydorenko@email.com", HashedPassword = "$2a$12$JlrNmzlMu.h5ZYeHvoZAgh0OLI6YV/JuHobXWj3ZAQ3xXeZbTLgg2" },
+                    new User { FirstName = "Анна", LastName = "Кравчук", Email = "anna.kravchuk@email.com", HashedPassword = "$2a$12$JlrNmzlMu.h5ZYeHvoZAqewwLI6YV/JuHobXWj3ZAQ3xXeZbTLgg2" },
+                    new User { FirstName = "Дмитро", LastName = "Ковальчук", Email = "dmytro.kovalchuk@email.com", HashedPassword = "$2a$12$JlrNmzlMu.h5ZY123oZAqu0OLI6YV/JuHobXWj3ZAQ3xXeZbTLgg2" },
+                    new User { FirstName = "Софія", LastName = "Бондаренко", Email = "sofia.bondarenko@email.com", HashedPassword = "$2a$12$JlrNmzlMu.h5ZYeHvoZAqu0OLI6fgs/JuHobXWj3ZAQ3xXeZbTLgg2" },
+                    new User { FirstName = "Андрій", LastName = "Мельник", Email = "andrii.melnyk@email.com", HashedPassword = "$2a$12$JlrNmzlMu.h5ZYeHvoZAqu0OLI6YV/fdSobXWj3ZAQ3xXeZbTLgg2" }
                 };
 
                 dataContext.Users.AddRange(users);

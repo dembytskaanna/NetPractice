@@ -4,6 +4,8 @@ using Cinema.Models;
 using AutoMapper;
 using Cinema.Dto;
 using Cinema.Repository;
+using Microsoft.AspNetCore.Authorization;
+using Cinema.Services;
 
 namespace Cinema.Controllers
 {
@@ -13,14 +15,16 @@ namespace Cinema.Controllers
     {
         private readonly IBookingRepository _bookingRepository;
         private readonly IMapper _mapper;
+        private readonly IUserService _userService;
 
-        public BookingController(IBookingRepository bookingRepository, IMapper mapper)
+        public BookingController(IBookingRepository bookingRepository, IMapper mapper, IUserService userService)
         {
             _bookingRepository = bookingRepository;
             _mapper = mapper;
+            _userService = userService;
         }
 
-        [HttpGet]
+        [HttpGet, Authorize(Roles = "Admin")]
         [ProducesResponseType(200, Type = typeof(IEnumerable<Booking>))]
         public IActionResult GetBookings()
         {
@@ -32,7 +36,7 @@ namespace Cinema.Controllers
             return Ok(bookings);
         }
 
-        [HttpGet("{bookingId}")]
+        [HttpGet("{bookingId}"), Authorize]
         [ProducesResponseType(200, Type = typeof(Booking))]
         [ProducesResponseType(400)]
         public IActionResult GetBooking(int bookingId)
@@ -45,10 +49,16 @@ namespace Cinema.Controllers
             if (!ModelState.IsValid)
                 return BadRequest(ModelState);
 
-            return Ok(booking);
+            string role = _userService.GetMyRole();
+            if (role == "Admin") return Ok(booking);
+
+            int userId = _userService.GetMyId();
+            if (booking.UserId == userId) return Ok(booking);
+
+            return Unauthorized();
         }
 
-        [HttpGet("users/{bookingId}")]
+        [HttpGet("users/{bookingId}"), Authorize]
         [ProducesResponseType(200, Type = typeof(User))]
         [ProducesResponseType(400)]
         public IActionResult GetUserByBooking(int bookingId) {
@@ -61,10 +71,15 @@ namespace Cinema.Controllers
             if (!ModelState.IsValid)
                 return BadRequest(ModelState);
 
-            return Ok(user);
+            string role = _userService.GetMyRole();
+            if (role == "Admin") return Ok(user);
+            int userId = _userService.GetMyId();
+            if (user.UserId == userId) return Ok(user);
+
+            return Unauthorized();
         }
 
-        [HttpGet("screenings/{bookingId}")]
+        [HttpGet("screenings/{bookingId}"), Authorize(Roles = "Admin")]
         [ProducesResponseType(200, Type = typeof(Screening))]
         [ProducesResponseType(400)]
         public IActionResult GetScreeningByBooking(int bookingId)
@@ -81,20 +96,27 @@ namespace Cinema.Controllers
             return Ok(screening);
         }
 
-        [HttpPost]
+        [HttpPost, Authorize]
         [ProducesResponseType(204)]
         [ProducesResponseType(400)]
 
-        public IActionResult CreateBooking([FromBody] BookingDto bookingCreate)
+        public IActionResult CreateBooking([FromQuery] int userId, [FromQuery] int screeningId, [FromBody] BookingDto bookingCreate)
         {
             if (bookingCreate == null)
                 return BadRequest(ModelState);
-
 
             if (!ModelState.IsValid)
                 return BadRequest(ModelState);
 
             var bookingMap = _mapper.Map<Booking>(bookingCreate);
+
+            bookingMap.UserId = userId;
+            bookingMap.ScreeningId = screeningId;
+
+            int myId = _userService.GetMyId();
+            string role = _userService.GetMyRole();
+
+            if (userId != myId && role != "Admin") return Unauthorized();
 
 
             if (!_bookingRepository.CreateBooking(bookingMap))
@@ -106,7 +128,7 @@ namespace Cinema.Controllers
             return Ok("Successfully created");
         }
 
-        [HttpPut("{bookingId}")]
+        [HttpPut("{bookingId}"), Authorize]
         [ProducesResponseType(400)]
         [ProducesResponseType(204)]
         [ProducesResponseType(404)]
@@ -126,6 +148,11 @@ namespace Cinema.Controllers
 
             var bookingMap = _mapper.Map<Booking>(updatedBooking);
 
+            int myId = _userService.GetMyId();
+            string role = _userService.GetMyRole();
+
+            if (bookingMap.UserId != myId && role != "Admin") return Unauthorized();
+
             if(!_bookingRepository.UpdateBooking(bookingMap))
             {
                 ModelState.AddModelError("", "Something went wrong updating booking");
@@ -135,7 +162,7 @@ namespace Cinema.Controllers
             return NoContent();
         }
 
-        [HttpDelete("{bookingId}")]
+        [HttpDelete("{bookingId}"), Authorize(Roles = "Admin")]
         [ProducesResponseType(400)]
         [ProducesResponseType(204)]
         [ProducesResponseType(404)]

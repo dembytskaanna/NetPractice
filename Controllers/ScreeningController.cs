@@ -3,6 +3,7 @@ using Cinema.Dto;
 using Cinema.Interfaces;
 using Cinema.Models;
 using Cinema.Repository;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Cinema.Controllers
@@ -48,7 +49,7 @@ namespace Cinema.Controllers
             return Ok(screening);
         }
 
-        [HttpGet("bookings/{screeningId}")]
+        [HttpGet("bookings/{screeningId}"), Authorize(Roles = "Admin")]
         [ProducesResponseType(200, Type = typeof(IEnumerable<Booking>))]
         [ProducesResponseType(400)]
         public IActionResult GetBookingsByScreening (int screeningId)
@@ -64,7 +65,7 @@ namespace Cinema.Controllers
             return Ok(bookings);
         }
 
-        [HttpPost]
+        [HttpPost, Authorize(Roles = "Admin")]
         [ProducesResponseType(204)]
         [ProducesResponseType(400)]
 
@@ -89,7 +90,7 @@ namespace Cinema.Controllers
             return Ok("Successfully created");
         }
 
-        [HttpPut("{screeningId}")]
+        [HttpPut("{screeningId}"), Authorize(Roles = "Admin")]
         [ProducesResponseType(400)]
         [ProducesResponseType(204)]
         [ProducesResponseType(404)]
@@ -118,7 +119,7 @@ namespace Cinema.Controllers
             return NoContent();
         }
 
-        [HttpDelete("{screeningId}")]
+        [HttpDelete("{screeningId}"), Authorize(Roles = "Admin")]
         [ProducesResponseType(400)]
         [ProducesResponseType(204)]
         [ProducesResponseType(404)]
