@@ -6,7 +6,8 @@ namespace Cinema.Interfaces
     {
         ICollection<Film> GetFilms();
         Film GetFilm(int filmId);
-        Film GetFilm(string title);  
+        ICollection<Film> GetFilmsByTitle(string title);
+        ICollection<Film> GetFilmsByGenre(string genre);
         bool FilmExists(int filmId);
         ICollection<Screening> GetScreeningsByFilm(int filmId);
         bool CreateFilm(Film film);

@@ -29,9 +29,9 @@ namespace Cinema.Repository
             return _context.Films.Where(f => f.FilmId == filmId).FirstOrDefault();
         }
 
-        public Film GetFilm(string title)
+        public ICollection<Film> GetFilmsByTitle(string title)
         {
-            return _context.Films.Where(f => f.Title == title).FirstOrDefault();
+            return _context.Films.Where(f => f.Title.ToLower().Contains(title.ToLower()) ).ToList();
         }
 
         public ICollection<Film> GetFilms()
@@ -60,6 +60,11 @@ namespace Cinema.Repository
         {
             _context.Remove(film);
             return Save();
+        }
+
+        public ICollection<Film> GetFilmsByGenre(string genre)
+        {
+            return _context.Films.Where(f => f.Genre.ToLower().Contains(genre.ToLower()) ).ToList();
         }
     }
 }

@@ -65,6 +65,22 @@ namespace Cinema.Controllers
             return Ok(bookings);
         }
 
+        [HttpGet("date/{date}")]
+        [ProducesResponseType(200, Type = typeof(IEnumerable<Screening>))]
+        [ProducesResponseType(400)]
+        public IActionResult GetScreeningsByDate(DateTime date)
+        {
+            if (!_screeningRepository.GetScreeningsByDate(date).Any())
+                return NotFound();
+
+            var screenings = _mapper.Map<List<ScreeningDto>>(_screeningRepository.GetScreeningsByDate(date));
+
+            if (!ModelState.IsValid)
+                return BadRequest(ModelState);
+
+            return Ok(screenings);
+        }
+
         [HttpPost, Authorize(Roles = "Admin")]
         [ProducesResponseType(204)]
         [ProducesResponseType(400)]
