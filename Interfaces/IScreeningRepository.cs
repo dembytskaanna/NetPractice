@@ -6,7 +6,8 @@ namespace Cinema.Interfaces
     {
         ICollection<Screening> GetScreenings();
         Screening GetScreening(int screeningId);
-        ICollection <Booking> GetBookingsByScreening (int screeningId);
+        ICollection<Booking> GetBookingsByScreening (int screeningId);
+        ICollection<Screening> GetScreeningsByDate(DateTime date);
         bool ScreeningExists(int screeningId);
         bool CreateScreening(Screening screening);
         bool UpdateScreening(Screening screening);

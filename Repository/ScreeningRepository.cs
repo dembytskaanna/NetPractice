@@ -57,5 +57,10 @@ namespace Cinema.Repository
             _context.Remove(screening);
             return Save();
         }
+
+        public ICollection<Screening> GetScreeningsByDate(DateTime date)
+        {
+            return _context.Screenings.Where(s => s.Date == date).ToList();
+        }
     }
 }
