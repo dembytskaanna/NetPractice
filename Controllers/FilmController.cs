@@ -49,6 +49,38 @@ namespace Cinema.Controllers
             return Ok(film);
         }
 
+        [HttpGet("title/{title}")]
+        [ProducesResponseType(200, Type = typeof(ICollection<Film>))]
+        [ProducesResponseType(400)]
+        public IActionResult GetFilmsByTitle(string title)
+        {
+            if (!_filmRepository.GetFilmsByTitle(title).Any() || title.Length < 3)
+                return NotFound();
+
+            var films = _mapper.Map<List<FilmDto>>(_filmRepository.GetFilmsByTitle(title));
+
+            if (!ModelState.IsValid)
+                return BadRequest(ModelState);
+
+            return Ok(films);
+        }
+
+        [HttpGet("genre/{genre}")]
+        [ProducesResponseType(200, Type = typeof(ICollection<Film>))]
+        [ProducesResponseType(400)]
+        public IActionResult GetFilmsByGenre(string genre)
+        {
+            if (!_filmRepository.GetFilmsByGenre(genre).Any())
+                return NotFound();
+
+            var films = _mapper.Map<List<FilmDto>>(_filmRepository.GetFilmsByGenre(genre));
+
+            if (!ModelState.IsValid)
+                return BadRequest(ModelState);
+
+            return Ok(films);
+        }
+
         [HttpGet("screenings/{filmId}")]
         [ProducesResponseType(200, Type = typeof(IEnumerable<Screening>))]
         [ProducesResponseType(400)]
